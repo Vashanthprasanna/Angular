@@ -1,0 +1,13 @@
+table tr ,th,td{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+table{
+    width: 89%;
+    margin-inline: 50px;
+}
+
+ul{
+    list-style-type: none;
+}

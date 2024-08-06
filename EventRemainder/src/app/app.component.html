@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+   
+
+    <h1 style="text-align: center;">
+      Event Remainder
+    </h1>
+
+    
+      <div style="border: 1px solid;padding: 50px;margin: 50px;">
+        <form #form="ngForm">
+
+          <div style="margin-block: 20px;" >
+            <label for="id">Event Id : </label>
+            <input type="text" class="form-control" name="id" #id="ngModel" ngModel required pattern="[a-zA-Z0-9]+" >
+          </div>
+
+
+          <div *ngIf="id.touched">
+            <div *ngIf="id.errors?.['required']">
+              <font color="red"><b>Event Id Required</b></font>
+            </div>
+            <div *ngIf="id.errors?.['pattern']">
+              <font color="red"><b>Event Id Invalid</b></font>
+            </div>
+          </div>
+
+
+
+          <div style="margin-block: 20px;" >
+            <label for="event">Event : </label>
+            <input type="text" class="form-control" name="event" #event="ngModel" ngModel required pattern="[a-zA-Z0-9]+">
+          </div>
+
+
+          <div *ngIf="event.touched">
+            <div *ngIf="event.errors?.['required']">
+              <font color="red"><b>Event Name Required</b></font>
+            </div>
+            <div *ngIf="event.errors?.['pattern']">
+              <font color="red"><b>Event Name Invalid</b></font>
+            </div>
+          </div>
+
+
+          <div  style="margin-block: 20px;">
+            <label for="desc">Description : </label>
+            <input type="text" id="desc" class="form-control" name="desc" #desc="ngModel" ngModel required pattern="[a-zA-Z0-9]+">
+          </div>
+
+          
+          <div *ngIf="desc.touched">
+            <div *ngIf="desc.errors?.['required']">
+              <font color="red"><b>Event Description Required</b></font>
+            </div>
+            <div *ngIf="desc.errors?.['pattern']">
+              <font color="red"><b>Event Description Invalid</b></font>
+            </div>
+          </div>
+
+          <div  style="margin-block: 20px;">
+            <label for="date">
+              Date : 
+            </label>
+            <input type="text" id="date" class="form-control" name="date" #date="ngModel" ngModel required pattern="[a-zA-Z0-9/]+">
+          </div>
+
+          <div *ngIf="date.touched">
+            <div *ngIf="date.errors?.['required']">
+              <font color="red"><b>Event Date Required</b></font>
+            </div>
+            <div *ngIf="date.errors?.['pattern']">
+              <font color="red"><b>Event Date Invalid</b></font>
+            </div>
+          </div>
+
+        </form>
+        
+ 
+      <button class="btn btn-success" (click)="insertData(form.value)">
+        Insert
+      </button>
+      &nbsp;&nbsp;
+      <button class="btn btn-primary" (click)="updateData(form.value)">
+        Update</button>&nbsp;&nbsp;
+      <button class="btn btn-danger" (click)="deleteData(form.value)">
+        Delete</button>&nbsp;&nbsp;
+      <button class="btn btn-warning" (click)="findData(form.value)">
+        Find
+      </button>
+      &nbsp;&nbsp;
+      <button class="btn btn-info" (click)="findAllData()">
+        Find All
+      </button>&nbsp;&nbsp;
+
+
+
+      <button class="btn btn-warning" (click)="print(form)">Reset</button>
+
+      </div>
+      
+
+
+
+
+<br />
+  <h3>{{ result }}</h3>
+  <div style="width: 100%" *ngIf="flag">
+    <table width="80%" align="center" class="table table-borderd">
+      <tr>
+        <th>Id</th>
+        <th>Event Name</th>
+        <th>Decription</th>
+        <th>Date</th>
+      </tr>
+      <tr *ngFor="let eve of eventArr">
+        <td>{{ eve.id }}</td>
+        <td>{{ eve.eventName }}</td>
+        <td>{{ eve.desc }}</td>
+        <td>{{ eve.date }}</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

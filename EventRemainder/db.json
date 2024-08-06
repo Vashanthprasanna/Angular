@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "eventName": "Birthday",
+      "desc": "Celebration",
+      "date": "12/5/24",
+      "id": "e066"
+    },
+    {
+      "eventName": "Marriage",
+      "desc": "Function",
+      "date": "25/3/24",
+      "id": "d887"
+    },
+    {
+      "id": "4a4d",
+      "eventName": "Party",
+      "desc": "Celebration",
+      "date": "12/12/24"
+    },
+    {
+      "id": "101",
+      "eventName": "BIRTHDAY",
+      "desc": "birthday45",
+      "date": "2/2/24"
+    },
+    {
+      "id": "102",
+      "eventName": "Temple",
+      "desc": "Festival",
+      "date": "23/5/24"
+    }
+  ]
+}
